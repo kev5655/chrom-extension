@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Babble adjust input length",
+  "version": "1.0.1",
+  "action":  {
+    "default_title": "Babble adjust input length"
+  },
+  "description": "Extension for adjust dynamically length of Babbel input field",
+  "icons": {
+    "16": "rsc/icons/favicon-16x16.png",
+    "32": "rsc/icons/favicon-32x32.png",
+    "96": "rsc/icons/favicon-96x96.png"
+  },
+  "host_permissions": ["https://my.babbel.com/*/lesson-player/*"],
+  "web_accessible_resources": [
+    {
+      "resources": ["/rsc/img/icon_disable24x24.svg", "/rsc/img/icon_enable24x24.svg"],
+      "matches": ["https://my.babbel.com/*"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://my.babbel.com/*/lesson-player/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
